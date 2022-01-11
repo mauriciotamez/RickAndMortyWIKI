@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from "react";
 import LocationInfo from './LocationInfo';
 import ResidentsList from './ResidentsList';
 
@@ -12,7 +12,15 @@ const SearchBox = () => {
     const [id, setId] = useState("1");
     const [data, setData] = useState({});
     
+    
+    useEffect(() => {
+        axios.get(`https://rickandmortyapi.com/api/location/${id}`)
+        .then(res => setData(res.data));  
+    }, [])
+    
+    
     // Execute the funcion that makes the call to the API with our current id state
+    
     const search = () => {
         axios.get(`https://rickandmortyapi.com/api/location/${id}`)
              .then(res => setData(res.data));
@@ -20,7 +28,7 @@ const SearchBox = () => {
     // JSX -----------------------------------------------------------------------------------------------------------------------------------------------------
     return (
         <>
-            {window.onload = search}
+            {/* {window.onload = search} */}
             <div className="search-box">
             <input type="text" onChange={e => setId(e.target.value)} />
                 <button onClick={search} >

@@ -1,6 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react';
-import { useEffect } from 'react/cjs/react.development';
+import React, { useState, useEffect } from "react";
 
 const ResidentInfo = (resident) => {
    
@@ -13,7 +12,6 @@ const ResidentInfo = (resident) => {
        .then(res =>
          {
            setCharInfo(res.data)
-           console.log(res.data);
         })
    }, [resident.resident])
 

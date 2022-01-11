@@ -6,6 +6,7 @@ import normalize from './styles/normalize.css'
 
 function App() {
   return (
+  
   <div className='wrapper'>
     <div className='title'>
       <img src="https://img.icons8.com/plasticine/100/000000/rick-sanchez.png" className='rick'/>
