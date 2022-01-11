@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* Our Rick and Morty background */
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: url(../images/rickWall2.png) no-repeat fixed; 
+  font-family: 'Bebas Neue', cursive;
+}
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Our container */
+.wrapper {
+  display: flex;
+  flex-flow: column wrap;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin-inline: auto;
+  width: auto;
+  height: auto;
+}
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(12, 12, 12);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(gray,rgb(126, 125, 128));
+  border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(67, 66, 66);
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Title Rick and Morty WIKI and icons provided by icons8.com */
+.title {
+  width: 500px; height: 80px;
+  margin: 50px 0  0;
+  padding: 30px 80px 30px 80px;
+  color: white;
+  background: rgba( 255, 255, 255, 0.3 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 8px );
+  -webkit-backdrop-filter: blur( 8px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  text-align: center;
+  font-size: 30px;
+  }
+
+.title h1 {
+  position: relative;
+  bottom: 120px; 
+}
+
+  .rick {
+    position: relative;
+    right: 260px;
+    top: 5px;
+    width: 80px;
+  }
+
+  .morty {
+    position: relative;
+    right: -260px;
+    top: -235px;
+    width: 80px;
+  }
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+ /* Search box styles */
+ 
+ .search-box {
+   position: relative;
+   top: -100px;
+   margin-bottom: -10px;
+ }
+ 
+ .search-box button {
+  position: relative;
+  left: 400px; top: -97px; width: 60px;
+  color: white;
+  font-size: 35px;
+  height: 60px;
+  background:none;
+  border: none;
+  cursor: pointer;
+ }
+
+ .search-box button:hover {
+   transform: scale(1.10);
+ }
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+ .fas fa-search{
+   font-size: 5rem;
+ }
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+ .search-box input {
+  position: relative;
+  left: 10px; bottom: 40px;
+  margin: 30px 0 0 -48px;
+  color: white;
+  width: 600px; height: 50px;
+  background: rgba( 255, 255, 255, 0.3 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 8px ); -webkit-backdrop-filter: blur( 8px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  font-size: 40px;
+ 
+ }
+ /*------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+ /* Location info row */
+ .locationInfo {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   width: 1500px;
+   position: relative;
+   bottom: 30px;
+   right: 510px; 
+   color: white;
+ }
+ /*------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+ .locationInfo .card {
+  background: rgba( 255, 255, 255, 0.3 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 8px ); -webkit-backdrop-filter: blur( 8px );
+  border-radius: 6px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  padding: 10px 5px 10px;
+  width: 300px;
+  font-size: 40px;
+ }
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+ /* Grid with Card ( image and info of char ) */
+
+.charGrid {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(6, 1fr);
+  position: relative;
+  right: 480px; top: 50px;
+  padding-block: 2rem;
+  margin-inline: auto;
+}
+
+.char  img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.infoCharCard {
+  background: rgba( 255, 255, 255, 0.3 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 8px ); -webkit-backdrop-filter: blur( 8px );
+  border-radius: 6px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  /* padding: 10px 5px 10px; */
+  font-size: 23px;
+  padding: 10px 10px 10px 10px;
+}
+
+/* Bullet styles to change collors of bullet in case it is alive, dead or unknown */
+
+.status li {
+  list-style: none;
+}
+
+.bulletAlive::before {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: green; /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+  font-size: 35px;
+}
+
+.bulletDead::before {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: red; /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+  font-size: 35px;
+}
+
+.bulletUnknown::before {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: gray; /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+  font-size: 35px;
+}
+ /*------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+ /* Footer */
+
+ /*------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+ /* Media querys */
+
+
+ @media (max-width:1080px) {
+  body {
+    background: url(../images/rickWall2.png) fixed; 
+    
+  }
+  
+  .title {
+    position: relative;
+    
+  }
+  
+  .search-box {
+    
+  }
+  
+
+
+  .locationInfo  {
+    width: 1000px;
+    justify-content: center;
+    left: -260px;
+    gap: 3rem;
+    
+   }
+  
+   .locationInfo .card {
+    width: 180px;
+    font-size: 30px;
+   }
+  
+  
+  .charGrid {
+    grid-template-columns: repeat(4, 1fr);
+    right: -10px; left: -220px;
+    
+   }
+
+
+ }
+
+ @media (max-width:600px) {
+   
+  .title{
+    position: relative;
+    width: 400px;
+    margin-left: 30px;
+    top: 50px;
+   }
+   
+  .title h1 {
+    position: relative;
+    top: -90px;
+  }
+
+   .rick {
+    position: relative;
+    right: 230px;
+    top: 20px;
+    width: 55px;
+  }
+
+  .morty {
+    position: relative;
+    right: -230px;
+    top: -195px;
+    width: 55px;
+  }
+
+   .search-box {
+    left: -40px
+  }
+  
+  .search-box input {
+     width: 420px;
+     left: 80px;   
+   }
+   
+   .search-box button {
+    width: 70px; 
+    height: 70px;
+    left: 40px;
+    top: 50px;
+   }
+   
+   .charGrid {
+    grid-template-columns: repeat(2, 1fr);
+    right: 0px;
+    left: -48px;
+   margin-inline: 15px 15px;
+   }
+
+
+   .locationInfo {
+    flex-direction: column;
+    left: 100px; top: 20px;
+    width: 200px;
+    gap: 1.5rem;
+    margin: 0;
+   }
+ }
